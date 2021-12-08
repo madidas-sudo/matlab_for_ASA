@@ -1,0 +1,34 @@
+% Amplitude og phase spectrum
+% Set antal
+antal = 8;
+
+% Create array
+array = zeros(3,antal);
+
+% Set frequencies & amplitudes & phases
+for q=1:antal
+    % Frequency
+    array(1,q) = (2*q*pi)/T;
+    % Amplitude
+    array(2,q) = sqrt(a_n(q)^2+b_n(q)^2);
+    % Phase
+    array(3,q) = (180/pi)*atan2((b_n(q)),(a_n(q)));
+end
+
+% Create amplitude spectrum
+stem(array(1,:),array(2,:),'LineWidth', 2)
+    % Formatting
+    xticks(array(1,:));
+    title('Amplitude spectrum', 'FontSize', 14);
+    xlabel('frequency', 'FontSize', 12);
+    ylabel('amplitude', 'FontSize', 12);
+    grid on;
+
+% Create phase spectrum
+stem(array(1,:),array(3,:),'LineWidth', 2)
+    % Formatting
+    xticks(array(1,:));
+    title('Phase spectrum', 'FontSize', 14);
+    xlabel('frequency', 'FontSize', 12);
+    ylabel('phase (deg)', 'FontSize', 12);
+    grid on;
