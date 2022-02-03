@@ -1,0 +1,12 @@
+{
+	"_schemaVersion": "1.0.0",
+	"vecdraw":
+	{
+	   "inputs":
+	   [
+		  {"name":"p1", "kind":"required", "type":["numeric"], "purpose":"End or length"},
+		  {"name":"p0", "kind":"ordered", "type":["numeric"], "purpose":"Start"},
+		  {"name":"choice", "kind":"ordered", "type":["numeric"], "purpose":"0 for endpoint, 1 for length"}
+	   ]
+	}
+  }
